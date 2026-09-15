@@ -33,16 +33,20 @@ CARDS = [
         "hook": "Four machines, each generated in Blender from one specification file.",
         "figures": [("MACHINES", "4"), ("AIRFOILS", "2,044"), ("SOURCE", "1 spec file")],
         "asset": "assets/render.jpg",
+        "img_w": 560,
+        "h": 230,
         "fit": "slice",
         "region_bg": "#010102",
     },
     {
         "sheet": "02",
         "name": "POLYMARKET-BTC-SCALPER",
-        "hook": "1,062 trades, 87.75% won — and a stop that filled at 67¢ instead of 80¢.",
+        "hook": "A stop that filled at 67¢ instead of 80¢.",
         "figures": [("TRADES", "1,062"), ("WIN RATE", "87.75%"), ("NET P&L", "+$373.76")],
         "asset": "assets/curve.png",
-        "fit": "slice",
+        "img_w": 780,
+        "h": 232,
+        "fit": "meet",
         "region_bg": "#1F1F1F",
     },
 ]
@@ -96,11 +100,17 @@ def cover():
 # ---------------------------------------------------------------- project card
 
 def card(spec):
-    W, H, IMG_W = 1200, 230, 560
+    W = 1200
+    IMG_W, H = spec["img_w"], spec["h"]
     uri = data_uri(spec["asset"], "image/jpeg" if spec["asset"].endswith(".jpg") else "image/png")
-    x_text = 600
+    x_text = IMG_W + 40
+    available = 1176 - x_text
+    # The two cards carry different image widths, so the copy has to fit
+    # whatever column is left rather than assume a fixed one.
+    name_font = min(25, (available * 0.96) / (len(spec["name"]) * 0.70))
+    hook_font = min(13.5, (available * 0.96) / (len(spec["hook"]) * 0.52))
     figures = spec["figures"]
-    cw = (1176 - x_text) / len(figures)
+    cw = available / len(figures)
 
     cells = ""
     for i, (label, value) in enumerate(figures):
@@ -127,8 +137,8 @@ def card(spec):
   <rect x="{x_text - 12}" y="46" width="3" height="44" fill="{ACCENT}"/>
   <g font-family="{MONO}">
     <text x="{x_text}" y="56" fill="{FAINT}" font-size="9" letter-spacing="1.8">SHEET {spec["sheet"]}</text>
-    <text x="{x_text}" y="90" fill="{INK}" font-size="25" letter-spacing="2.4">{esc(spec["name"])}</text>
-    <text x="{x_text}" y="122" fill="{MUTED}" font-size="13.5">{esc(spec["hook"])}</text>
+    <text x="{x_text}" y="90" fill="{INK}" font-size="{name_font:.1f}" letter-spacing="2.4">{esc(spec["name"])}</text>
+    <text x="{x_text}" y="122" fill="{MUTED}" font-size="{hook_font:.1f}">{esc(spec["hook"])}</text>
     <line x1="{x_text}" y1="156" x2="1176" y2="156" stroke="{LINE}" stroke-width="1"/>
 {cells}  </g>
 </svg>
