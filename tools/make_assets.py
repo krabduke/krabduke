@@ -2,23 +2,15 @@
 """
 Generates the SVG plates used by the profile README.
 
-The blade sections on the cover are drawn with the same formulae as
-engine/airfoil.py in f110-turbofan: NACA 4-digit half-thickness (with the
--0.1036 closing coefficient) over a parabolic mid-chord camber line, plus the
-leading-edge radius boost applied above 10% thickness. Names and parameters
-come from the BladeRow entries in engine/spec.py, so nothing here is
-decoration -- if a number changes there, change it here too.
-
-The two project cards embed their image as a data URI rather than linking it.
-An SVG loaded through <img> cannot fetch external files, and embedding is what
-lets a card carry its own title block at a fixed height instead of two stacked
+Each project card embeds its image as a data URI rather than linking it. An SVG
+loaded through <img> cannot fetch external files, and embedding is what lets a
+card carry its own title block at a fixed height instead of two stacked
 full-width images.
 
     python3 tools/make_assets.py
 """
 
 import base64
-import math
 import os
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -32,16 +24,7 @@ INK = "#E9F2EE"
 MUTED = "#7E918B"
 FAINT = "#54665F"
 ACCENT = "#4FA98A"
-PULSE = "#8FE3BE"
 LINE = "#1C2E29"
-
-# Straight out of engine/spec.py. Rows that omit thickness/camber take the
-# BladeRow defaults: thickness 0.08, camber 0.06.
-ROWS = [
-    ("IGV", 0.05, 0.03),
-    ("HPC R1", 0.08, 0.06),
-    ("HPT NGV", 0.16, 0.14),
-]
 
 CARDS = [
     {
@@ -65,41 +48,6 @@ CARDS = [
 ]
 
 
-def naca_thickness(xc, tc):
-    if xc < 0.0:
-        xc = 0.0
-    return 5.0 * tc * (0.2969 * math.sqrt(xc) - 0.1260 * xc - 0.3516 * xc ** 2
-                       + 0.2843 * xc ** 3 - 0.1036 * xc ** 4)
-
-
-def camber_line(xc, mc):
-    return 4.0 * mc * xc * (1.0 - xc), 4.0 * mc * (1.0 - 2.0 * xc)
-
-
-def le_boost_for(tc):
-    return 1.8 if tc > 0.10 else 1.0
-
-
-def section_points(n_pts, tc, mc, boost=1.0):
-    n_half = n_pts // 2 + 1
-    xs = [0.5 * (1.0 - math.cos(math.pi * i / (n_half - 1))) for i in range(n_half)]
-    upper, lower = [], []
-    for xc in xs:
-        yt = naca_thickness(xc, tc)
-        if xc < 0.05 and boost != 1.0:
-            yt *= 1.0 + (boost - 1.0) * (1.0 - xc / 0.05)
-        yc, dyc = camber_line(xc, mc)
-        th = math.atan(dyc)
-        st, ct = math.sin(th), math.cos(th)
-        upper.append((xc - yt * st, yc + yt * ct))
-        lower.append((xc + yt * st, yc - yt * ct))
-    return list(reversed(upper)) + lower[1:-1]
-
-
-def path_d(pts):
-    return "M" + "L".join(f"{x:.2f},{y:.2f}" for x, y in pts)
-
-
 def data_uri(rel_path, mime):
     with open(os.path.join(HERE, rel_path), "rb") as fh:
         return f"data:{mime};base64," + base64.b64encode(fh.read()).decode("ascii")
@@ -113,65 +61,33 @@ def esc(text):
 # --------------------------------------------------------------------- cover
 
 def cover():
-    W, H = 1200, 180
-    datum, scale = 1130, 1.75
-    sw = 1.25 / scale
-    bands = [(56, 0.55), (100, 0.75), (144, 0.95)]
-
-    solid, pulses, labels = [], [], []
-    for (name, tc, mc), (yt_center, opacity) in zip(ROWS, bands):
-        pts = section_points(72, tc, mc, le_boost_for(tc))
-        vs = [v for _, v in pts]
-        tx = datum - 100 * scale
-        ty = yt_center - scale * (min(vs) + max(vs)) / 2
-        d = path_d([(u * 100, v * 100) for u, v in pts])
-        xf = f"translate({tx:.2f},{ty:.2f}) scale({scale})"
-        solid.append(f'    <g transform="{xf}">\n      <path d="{d}" opacity="{opacity}"/>\n    </g>')
-        pulses.append(
-            f'    <g transform="{xf}">\n'
-            f'      <path d="{d}" pathLength="100" stroke-dasharray="7 93" stroke-dashoffset="100"'
-            f' opacity="{min(1.0, opacity + 0.25):.2f}" stroke-width="{sw * 1.6:.3f}">\n'
-            f'        <animate attributeName="stroke-dashoffset" from="100" to="0" dur="6s"'
-            f' begin="{len(pulses) * 1.1}s" repeatCount="indefinite"/>\n'
-            f'      </path>\n    </g>')
-        labels.append(f'    <text x="{datum + 11}" y="{yt_center + 3:.0f}" fill="#4A5D56"'
-                      f' font-size="9" letter-spacing="1.2">{name}</text>')
-
+    W, H = 1200, 160
     m, L = 9, 12
     marks = ""
     for x, y, dx, dy in [(0, 0, 1, 1), (W, 0, -1, 1), (0, H, 1, -1), (W, H, -1, -1)]:
         marks += (f'  <path d="M{x + dx * m} {y} H{x + dx * (m + L)}'
                   f' M{x} {y + dy * m} V{y + dy * (m + L)}" stroke="{LINE}" stroke-width="1" fill="none"/>\n')
 
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="Keenan Casalegno. Robotics, AI, market microstructure. Three blade sections from the F110 turbofan, drawn to their real thickness and camber.">
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="Keenan Casalegno — robotics, AI, market microstructure">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{BG}"/><stop offset="1" stop-color="#070C0B"/></linearGradient>
     <pattern id="g1" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="{GRID}" stroke-width="1"/></pattern>
     <pattern id="g2" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M10 0H0V10" fill="none" stroke="{GRIDF}" stroke-width="0.6"/></pattern>
     <linearGradient id="glow" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1E5C49" stop-opacity="0.5"/><stop offset="1" stop-color="#1E5C49" stop-opacity="0"/></linearGradient>
-    <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="{ACCENT}"/><stop offset="0.7" stop-color="{ACCENT}" stop-opacity="0.15"/><stop offset="1" stop-color="{ACCENT}" stop-opacity="0"/></linearGradient>
+    <linearGradient id="rule" gradientUnits="userSpaceOnUse" x1="74" y1="0" x2="620" y2="0"><stop offset="0" stop-color="{ACCENT}"/><stop offset="0.7" stop-color="{ACCENT}" stop-opacity="0.15"/><stop offset="1" stop-color="{ACCENT}" stop-opacity="0"/></linearGradient>
     <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="22"/></filter>
   </defs>
   <rect width="{W}" height="{H}" fill="url(#bg)"/>
   <rect width="{W}" height="{H}" fill="url(#g2)"/>
   <rect width="{W}" height="{H}" fill="url(#g1)"/>
-  <ellipse cx="190" cy="90" rx="290" ry="100" fill="url(#glow)" filter="url(#soft)"><animate attributeName="opacity" values="0.75;1;0.75" dur="12s" repeatCount="indefinite"/></ellipse>
-{marks}  <line x1="{datum}" y1="36" x2="{datum}" y2="162" stroke="{LINE}" stroke-width="1" stroke-dasharray="2 5"/>
-  <g fill="none" stroke="{ACCENT}" stroke-width="{sw:.3f}" stroke-linejoin="round" stroke-linecap="round">
-{chr(10).join(solid)}
-  </g>
-  <g fill="none" stroke="{PULSE}" stroke-linejoin="round" stroke-linecap="round">
-{chr(10).join(pulses)}
-  </g>
-{chr(10).join(labels)}
-  <rect x="0" y="0" width="1.5" height="{H}" fill="{ACCENT}" opacity="0.2"><animate attributeName="x" values="-10;1210" dur="12s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.24;0.24;0" keyTimes="0;0.1;0.8;1" dur="12s" repeatCount="indefinite"/></rect>
+  <ellipse cx="210" cy="80" rx="300" ry="95" fill="url(#glow)" filter="url(#soft)"><animate attributeName="opacity" values="0.75;1;0.75" dur="12s" repeatCount="indefinite"/></ellipse>
+{marks}  <rect x="0" y="0" width="1.5" height="{H}" fill="{ACCENT}" opacity="0.2"><animate attributeName="x" values="-10;1210" dur="12s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.24;0.24;0" keyTimes="0;0.1;0.8;1" dur="12s" repeatCount="indefinite"/></rect>
   <g font-family="{MONO}">
-    <text x="72" y="92" fill="{INK}" font-size="46" letter-spacing="6" font-weight="600">KEENAN</text>
-    <text x="72" y="136" fill="{INK}" font-size="46" letter-spacing="6" font-weight="600" opacity="0.38">CASALEGNO</text>
-    <line x1="74" y1="154" x2="520" y2="154" stroke="url(#rule)" stroke-width="2" pathLength="100" stroke-dasharray="100"><animate attributeName="stroke-dashoffset" from="100" to="0" dur="1.8s" begin="0.3s" fill="freeze"/></line>
-    <text x="74" y="174" fill="{MUTED}" font-size="14" letter-spacing="2.4">ROBOTICS · AI · MARKET MICROSTRUCTURE</text>
-    <text x="74" y="34" fill="#3A4A44" font-size="9.5" letter-spacing="2.8">KRABDUKE</text>
-    <text x="{W - 72}" y="34" fill="#3A4A44" font-size="9.5" letter-spacing="2.8" text-anchor="end">SHEET 00 · 2026</text>
+    <text x="72" y="72" fill="{INK}" font-size="42" letter-spacing="6" font-weight="600">KEENAN</text>
+    <text x="72" y="114" fill="{INK}" font-size="42" letter-spacing="6" font-weight="600" opacity="0.38">CASALEGNO</text>
+    <line x1="74" y1="130" x2="620" y2="130" stroke="url(#rule)" stroke-width="2" pathLength="100" stroke-dasharray="100" stroke-dashoffset="0"><animate attributeName="stroke-dashoffset" from="100" to="0" dur="1.8s" begin="0.3s" fill="freeze"/></line>
+    <text x="74" y="148" fill="{MUTED}" font-size="13.5" letter-spacing="2.4">ROBOTICS · AI · MARKET MICROSTRUCTURE</text>
+    <text x="74" y="26" fill="#3A4A44" font-size="9.5" letter-spacing="2.8">KRABDUKE</text>
   </g>
 </svg>
 '''
