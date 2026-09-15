@@ -30,9 +30,9 @@ CARDS = [
     {
         "sheet": "01",
         "name": "MODEL-GALLERY",
-        "hook": "Four machines, each generated in Blender from one specification file.",
+        "hook": "An F110 running: 26 parts spinning, flow through the core.",
         "figures": [("MACHINES", "4"), ("AIRFOILS", "2,044"), ("SOURCE", "1 spec file")],
-        "asset": "assets/render.jpg",
+        "asset": "assets/f110.gif",
         "img_w": 560,
         "h": 230,
         "fit": "slice",
@@ -52,9 +52,14 @@ CARDS = [
 ]
 
 
-def data_uri(rel_path, mime):
+MIME = {".jpg": "image/jpeg", ".jpeg": "image/jpeg",
+        ".png": "image/png", ".gif": "image/gif"}
+
+
+def data_uri(rel_path):
+    ext = os.path.splitext(rel_path)[1].lower()
     with open(os.path.join(HERE, rel_path), "rb") as fh:
-        return f"data:{mime};base64," + base64.b64encode(fh.read()).decode("ascii")
+        return f"data:{MIME[ext]};base64," + base64.b64encode(fh.read()).decode("ascii")
 
 
 def esc(text):
@@ -102,7 +107,7 @@ def cover():
 def card(spec):
     W = 1200
     IMG_W, H = spec["img_w"], spec["h"]
-    uri = data_uri(spec["asset"], "image/jpeg" if spec["asset"].endswith(".jpg") else "image/png")
+    uri = data_uri(spec["asset"])
     x_text = IMG_W + 40
     available = 1176 - x_text
     # The two cards carry different image widths, so the copy has to fit
