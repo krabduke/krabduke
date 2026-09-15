@@ -2,19 +2,20 @@
   <img src="hero.svg" width="100%" alt="Keenan Casalegno — parametric CAD, market microstructure, systems" />
 </p>
 
-<p align="center">
-  <a href="https://github.com/krabduke/model-gallery">
-    <img src="https://raw.githubusercontent.com/krabduke/model-gallery/main/img/f110.png" width="49%" alt="model-gallery — four machines generated from single specification files" />
-  </a>
-  <a href="https://github.com/krabduke/polymarket-btc-scalper">
-    <img src="https://raw.githubusercontent.com/krabduke/polymarket-btc-scalper/main/results/forward-test-btc.png" width="49%" alt="polymarket-btc-scalper — forward-test dashboard" />
-  </a>
-</p>
+<img src="strip-01.svg" width="100%" alt="Sheet 01 — model-gallery" />
 
-| | |
-|:--|:--|
-| **[model-gallery](https://github.com/krabduke/model-gallery)**<br>Four machines — two engines and the vehicles built around them — generated in Blender from one spec file each. 2,044 airfoils in the turbofan alone. | **[polymarket-btc-scalper](https://github.com/krabduke/polymarket-btc-scalper)**<br>An 88% win rate that still lost its edge, measured to the cent. The stop was set at 80¢ and filled at 67¢. |
+*Four machines — two engines and the vehicles built around them — generated in Blender from one specification file each.*
 
-<p align="center">
-  <sub>Standard library only. Every repository has tests, and a README that says what it cannot do.</sub>
-</p>
+<a href="https://github.com/krabduke/model-gallery">
+  <img src="assets/f110.jpg" width="100%" alt="F110-GE-129 augmented turbofan, 99 parts and 2,044 airfoils, modelled parametrically in Blender" />
+</a>
+
+<img src="strip-02.svg" width="100%" alt="Sheet 02 — polymarket-btc-scalper" />
+
+*An 88% win rate that lost its edge anyway: the stop was set at 80¢ and filled at 67¢.*
+
+<a href="https://github.com/krabduke/polymarket-btc-scalper">
+  <img src="assets/forward-test.png" width="100%" alt="Live forward-test dashboard: 1,062 BTC trades, cumulative P&L and its drawdown" />
+</a>
+
+<img src="footer.svg" width="100%" alt="Standard library only. Tested. Documented." />
