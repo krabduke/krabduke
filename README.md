@@ -1,54 +1,20 @@
+<p align="center">
+  <img src="hero.svg" width="100%" alt="Keenan Casalegno — parametric CAD, market microstructure, systems" />
+</p>
 
-## Keenan
-
-Liceo scientifico student in Rome. I build quantitative research infrastructure,
-multi-agent LLM systems, and FPV hardware — mostly because each one keeps
-turning out to need the others.
-
-### K2 Capital Management
-
-A personal quantitative research platform, and the thing most of my other work
-feeds into. It runs a multi-agent pipeline that produces a daily intelligence
-brief: separate agents cover geopolitics, macro, equities, and crypto, a writer
-assembles the draft, and a formatter enforces structure before it publishes to
-a vault and a site.
-
-The parts that were actually hard:
-
-- **Local inference where it fits.** Classification and formatting run on local
-  models; only synthesis calls out. That decision is a cost model, not a
-  preference, and it shapes the whole architecture.
-- **Structured output from small models.** They emit JSON wrapped in prose,
-  fenced in markdown, with trailing commas. Getting reliable structure out of
-  them needs a validation and repair loop, not better prompting.
-- **Taxonomy drift.** Three systems — pipeline, vault, and site — each grew
-  their own idea of what a theme is, and they disagree in ways that only
-  surface at publish time.
-
-### What else is here
-
-Perpetuals trading research on Hyperliquid, a Polymarket short-horizon data
-pipeline, and FPV builds including a parametric frame designed in OpenSCAD.
-
-### Small tools
-
-Standalone utilities extracted from the above, each with tests and a README
-that says what it cannot do:
+<p align="center">
+  <a href="https://github.com/krabduke/model-gallery">
+    <img src="https://raw.githubusercontent.com/krabduke/model-gallery/main/img/f110.png" width="49%" alt="model-gallery — four machines generated from single specification files" />
+  </a>
+  <a href="https://github.com/krabduke/polymarket-btc-scalper">
+    <img src="https://raw.githubusercontent.com/krabduke/polymarket-btc-scalper/main/results/forward-test-btc.png" width="49%" alt="polymarket-btc-scalper — forward-test dashboard" />
+  </a>
+</p>
 
 | | |
-|---|---|
-| [papertrade](https://github.com/krabduke/papertrade) | Backtest engine that fills at the next bar's open, so a strategy cannot act on information it did not have |
-| [truncated-loss](https://github.com/krabduke/truncated-loss) | Does cutting losses short help? Measured across paths, not asserted |
-| [funding-basis](https://github.com/krabduke/funding-basis) | Perp funding normalised across venues that settle on different schedules |
-| [calibration](https://github.com/krabduke/calibration) | Is your 70% actually 70%? Brier score and reliability diagrams |
-| [schema-guard](https://github.com/krabduke/schema-guard) | Force any model to return schema-valid JSON, or fail with the history |
-| [blackbox](https://github.com/krabduke/blackbox) | Betaflight log analysis with a hand-rolled radix-2 FFT |
-| [ais-decode](https://github.com/krabduke/ais-decode) | Decode AIS ship broadcasts; detect chokepoint transits |
-| [secretscan](https://github.com/krabduke/secretscan) | Find credentials in a repo's history before it goes public |
+|:--|:--|
+| **[model-gallery](https://github.com/krabduke/model-gallery)**<br>Four machines — two engines and the vehicles built around them — generated in Blender from one spec file each. 2,044 airfoils in the turbofan alone. | **[polymarket-btc-scalper](https://github.com/krabduke/polymarket-btc-scalper)**<br>An 88% win rate that still lost its edge, measured to the cent. The stop was set at 80¢ and filled at 67¢. |
 
-Everything above is standard library only. `git clone` and run it.
-
-### Elsewhere
-
-Model UN (RIMUN, THIMUN). Reading mostly history and market microstructure.
-
+<p align="center">
+  <sub>Standard library only. Every repository has tests, and a README that says what it cannot do.</sub>
+</p>

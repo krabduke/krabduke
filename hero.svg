@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" role="img" aria-label="Keenan Casalegno">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0B1412"/>
+      <stop offset="1" stop-color="#070C0B"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#12201C" stroke-width="1"/>
+    </pattern>
+    <pattern id="gridfine" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M10 0H0V10" fill="none" stroke="#0F1A17" stroke-width="0.6"/>
+    </pattern>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1E5C49" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#1E5C49" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4FA98A"/>
+      <stop offset="0.7" stop-color="#4FA98A" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="#4FA98A" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="26"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="300" fill="url(#bg)"/>
+  <rect width="1200" height="300" fill="url(#gridfine)"/>
+  <rect width="1200" height="300" fill="url(#grid)"/>
+
+  <ellipse cx="210" cy="150" rx="300" ry="130" fill="url(#glow)" filter="url(#soft)">
+    <animate attributeName="opacity" values="0.75;1;0.75" dur="11s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- Airfoil sections: real NACA 4-digit geometry, drawn and redrawn -->
+  <g fill="none" stroke="#4FA98A" stroke-width="1.4" stroke-linejoin="round">
+    <g transform="translate(742,108) scale(3.5)" opacity="0.85">
+      <path pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"
+            d="M0,0 L0,0.4 L0.1,0.8 L0.3,1.2 L0.7,1.6 L1.1,2 L1.6,2.4 L2.2,2.8 L2.9,3.2 L3.7,3.6 L4.6,4 L5.6,4.4 L6.7,4.7 L7.9,5.1 L9.2,5.4 L10.6,5.8 L12,6.1 L13.5,6.4 L15.1,6.6 L16.8,6.9 L18.5,7.1 L20.3,7.3 L22.2,7.5 L24.1,7.6 L26.1,7.7 L28.1,7.8 L30.2,7.9 L32.3,7.9 L34.5,7.9 L36.6,7.9 L38.9,7.8 L41.1,7.8 L43.3,7.7 L45.6,7.5 L47.8,7.4 L50.1,7.2 L52.3,7.1 L54.6,6.9 L56.8,6.7 L59,6.4 L61.2,6.2 L63.4,6 L65.6,5.7 L67.7,5.4 L69.8,5.2 L71.8,4.9 L73.8,4.6 L75.8,4.3 L77.7,4.1 L79.5,3.8 L81.3,3.5 L83,3.2 L84.7,2.9 L86.2,2.7 L87.7,2.4 L89.2,2.1 L90.5,1.9 L91.8,1.7 L93,1.4 L94.1,1.2 L95.1,1 L96,0.8 L96.8,0.7 L97.6,0.5 L98.2,0.4 L98.8,0.3 L99.2,0.2 L99.6,0.1 L99.8,0 L100,0 L99.9,0 L99.8,0 L99.5,0 L99.2,-0.1 L98.7,-0.1 L98.2,-0.1 L97.5,-0.2 L96.8,-0.2 L95.9,-0.3 L95,-0.4 L94,-0.5 L92.9,-0.5 L91.7,-0.6 L90.4,-0.7 L89,-0.8 L87.6,-0.9 L86,-1 L84.5,-1.1 L82.8,-1.3 L81.1,-1.4 L79.3,-1.5 L77.4,-1.6 L75.5,-1.8 L73.6,-1.9 L71.6,-2 L69.5,-2.2 L67.5,-2.3 L65.3,-2.4 L63.2,-2.6 L61,-2.7 L58.8,-2.8 L56.6,-3 L54.4,-3.1 L52.2,-3.2 L49.9,-3.3 L47.7,-3.5 L45.5,-3.6 L43.3,-3.7 L41.1,-3.8 L38.9,-3.8 L36.7,-3.9 L34.6,-4 L32.5,-4.1 L30.5,-4.1 L28.5,-4.2 L26.5,-4.2 L24.6,-4.2 L22.7,-4.2 L20.9,-4.2 L19.1,-4.2 L17.4,-4.2 L15.8,-4.1 L14.2,-4.1 L12.7,-4 L11.3,-3.9 L9.9,-3.8 L8.6,-3.6 L7.4,-3.4 L6.3,-3.3 L5.3,-3.1 L4.3,-2.8 L3.5,-2.6 L2.7,-2.3 L2,-2.1 L1.4,-1.8 L1,-1.4 L0.6,-1.1 L0.3,-0.8 L0.1,-0.4 L0,0"/>
+      <animate attributeName="stroke-dashoffset" values="100;0;0;100" keyTimes="0;0.28;0.86;1" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.85;0.85;0" keyTimes="0;0.28;0.86;1" dur="10s" repeatCount="indefinite"/>
+    </g>
+    <g transform="translate(742,168) scale(3.5)" opacity="0.5">
+      <path pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"
+            d="M0,0 L0.1,0.4 L0.2,0.8 L0.5,1.2 L0.8,1.5 L1.3,1.9 L1.8,2.2 L2.4,2.6 L3.2,2.9 L4,3.2 L5,3.5 L6,3.8 L7.1,4.1 L8.3,4.4 L9.5,4.6 L10.9,4.8 L12.3,5 L13.9,5.2 L15.4,5.4 L17.1,5.5 L18.8,5.7 L20.6,5.8 L22.5,5.9 L24.4,5.9 L26.3,6 L28.3,6 L30.3,6 L32.4,6 L34.5,6 L36.7,5.9 L38.9,5.8 L41.1,5.8 L43.3,5.7 L45.5,5.5 L47.8,5.4 L50,5.3 L52.2,5.1 L54.5,5 L56.7,4.8 L58.9,4.6 L61.1,4.5 L63.3,4.3 L65.5,4.1 L67.6,3.9 L69.7,3.7 L71.7,3.5 L73.7,3.3 L75.6,3.1 L77.5,2.8 L79.4,2.6 L81.2,2.4 L82.9,2.2 L84.6,2 L86.1,1.8 L87.7,1.7 L89.1,1.5 L90.5,1.3 L91.7,1.1 L92.9,1 L94,0.8 L95,0.7 L96,0.6 L96.8,0.5 L97.6,0.4 L98.2,0.3 L98.7,0.2 L99.2,0.1 L99.5,0.1 L99.8,0 L99.9,0 L100,0 L99.9,0 L99.8,0 L99.5,-0.1 L99.2,-0.1 L98.7,-0.2 L98.2,-0.3 L97.6,-0.4 L96.8,-0.5 L96,-0.6 L95,-0.7 L94,-0.8 L92.9,-1 L91.7,-1.1 L90.5,-1.3 L89.1,-1.5 L87.7,-1.7 L86.1,-1.8 L84.6,-2 L82.9,-2.2 L81.2,-2.4 L79.4,-2.6 L77.5,-2.8 L75.6,-3.1 L73.7,-3.3 L71.7,-3.5 L69.7,-3.7 L67.6,-3.9 L65.5,-4.1 L63.3,-4.3 L61.1,-4.5 L58.9,-4.6 L56.7,-4.8 L54.5,-5 L52.2,-5.1 L50,-5.3 L47.8,-5.4 L45.5,-5.5 L43.3,-5.7 L41.1,-5.8 L38.9,-5.8 L36.7,-5.9 L34.5,-6 L32.4,-6 L30.3,-6 L28.3,-6 L26.3,-6 L24.4,-5.9 L22.5,-5.9 L20.6,-5.8 L18.8,-5.7 L17.1,-5.5 L15.4,-5.4 L13.9,-5.2 L12.3,-5 L10.9,-4.8 L9.5,-4.6 L8.3,-4.4 L7.1,-4.1 L6,-3.8 L5,-3.5 L4,-3.2 L3.2,-2.9 L2.4,-2.6 L1.8,-2.2 L1.3,-1.9 L0.8,-1.5 L0.5,-1.2 L0.2,-0.8 L0.1,-0.4 L0,0"/>
+      <animate attributeName="stroke-dashoffset" values="100;0;0;100" keyTimes="0;0.28;0.86;1" dur="10s" begin="0.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.5;0.5;0" keyTimes="0;0.28;0.86;1" dur="10s" begin="0.6s" repeatCount="indefinite"/>
+    </g>
+    <g transform="translate(742,228) scale(3.5)" opacity="0.3">
+      <path pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"
+            d="M0,0 L0,0.5 L0,1 L0.2,1.5 L0.4,2 L0.8,2.6 L1.3,3.1 L1.8,3.7 L2.5,4.2 L3.3,4.7 L4.2,5.3 L5.2,5.8 L6.2,6.4 L7.4,6.9 L8.7,7.4 L10,7.9 L11.5,8.3 L13,8.8 L14.6,9.2 L16.3,9.6 L18.1,9.9 L19.9,10.2 L21.8,10.5 L23.8,10.8 L25.8,11 L27.9,11.1 L30,11.3 L32.1,11.3 L34.3,11.4 L36.6,11.4 L38.8,11.3 L41.1,11.2 L43.3,11.1 L45.6,10.9 L47.9,10.7 L50.1,10.5 L52.4,10.3 L54.7,10 L56.9,9.7 L59.2,9.4 L61.4,9.1 L63.6,8.7 L65.7,8.4 L67.9,8 L70,7.6 L72,7.2 L74,6.8 L75.9,6.4 L77.8,6 L79.7,5.6 L81.5,5.2 L83.2,4.7 L84.8,4.3 L86.4,3.9 L87.9,3.5 L89.3,3.2 L90.6,2.8 L91.9,2.4 L93.1,2.1 L94.2,1.8 L95.2,1.5 L96.1,1.2 L96.9,1 L97.6,0.8 L98.2,0.6 L98.8,0.4 L99.2,0.3 L99.6,0.1 L99.8,0.1 L100,0 L99.9,0 L99.8,0 L99.5,0 L99.2,0 L98.7,-0.1 L98.2,-0.1 L97.5,-0.1 L96.7,-0.1 L95.9,-0.2 L94.9,-0.2 L93.9,-0.3 L92.8,-0.3 L91.6,-0.4 L90.3,-0.5 L88.9,-0.5 L87.4,-0.6 L85.9,-0.7 L84.3,-0.7 L82.6,-0.8 L80.9,-0.9 L79.1,-1 L77.2,-1.1 L75.3,-1.2 L73.4,-1.3 L71.4,-1.4 L69.3,-1.6 L67.3,-1.7 L65.2,-1.8 L63,-1.9 L60.9,-2.1 L58.7,-2.2 L56.5,-2.3 L54.3,-2.5 L52.1,-2.6 L49.9,-2.7 L47.6,-2.8 L45.4,-3 L43.2,-3.1 L41.1,-3.2 L38.9,-3.3 L36.8,-3.4 L34.8,-3.5 L32.7,-3.6 L30.7,-3.7 L28.7,-3.8 L26.8,-3.9 L24.9,-4 L23.1,-4.1 L21.3,-4.1 L19.6,-4.2 L17.9,-4.2 L16.3,-4.2 L14.7,-4.2 L13.2,-4.1 L11.8,-4.1 L10.4,-4 L9.1,-3.9 L7.9,-3.8 L6.8,-3.6 L5.7,-3.4 L4.7,-3.2 L3.8,-3 L3,-2.7 L2.3,-2.4 L1.7,-2.1 L1.2,-1.7 L0.7,-1.3 L0.4,-0.9 L0.1,-0.5 L0,0"/>
+      <animate attributeName="stroke-dashoffset" values="100;0;0;100" keyTimes="0;0.28;0.86;1" dur="10s" begin="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.3;0.3;0" keyTimes="0;0.28;0.86;1" dur="10s" begin="1.2s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <!-- sweep -->
+  <rect x="0" y="0" width="1.5" height="300" fill="#4FA98A" opacity="0.25">
+    <animate attributeName="x" values="-10;1210" dur="10s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0.28;0.28;0" keyTimes="0;0.1;0.8;1" dur="10s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- text block -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+    <text x="72" y="132" fill="#E9F2EE" font-size="52" letter-spacing="7" font-weight="600">KEENAN</text>
+    <text x="72" y="192" fill="#E9F2EE" font-size="52" letter-spacing="7" font-weight="600" opacity="0.42">CASALEGNO</text>
+
+    <line x1="74" y1="222" x2="560" y2="222" stroke="url(#rule)" stroke-width="2" pathLength="100"
+          stroke-dasharray="100" stroke-dashoffset="100">
+      <animate attributeName="stroke-dashoffset" from="100" to="0" dur="1.6s" begin="0.3s" fill="freeze"/>
+    </line>
+
+    <text x="74" y="252" fill="#7E918B" font-size="14.5" letter-spacing="2.2">PARAMETRIC CAD</text>
+    <text x="222" y="252" fill="#3F514C" font-size="14.5" letter-spacing="2.2">/</text>
+    <text x="244" y="252" fill="#7E918B" font-size="14.5" letter-spacing="2.2">MARKET MICROSTRUCTURE</text>
+    <text x="474" y="252" fill="#3F514C" font-size="14.5" letter-spacing="2.2">/</text>
+    <text x="496" y="252" fill="#7E918B" font-size="14.5" letter-spacing="2.2">SYSTEMS</text>
+  </g>
+</svg>
