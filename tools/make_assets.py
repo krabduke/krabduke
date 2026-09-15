@@ -30,7 +30,7 @@ CARDS = [
     {
         "sheet": "01",
         "name": "MODEL-GALLERY",
-        "hook": "An F110 running: 26 parts spinning, flow through the core.",
+        "hook": "Spools wind up, then the afterburner lights.",
         "figures": [("MACHINES", "4"), ("AIRFOILS", "2,044"), ("SOURCE", "1 spec file")],
         "asset": "assets/f110.gif",
         "img_w": 560,
