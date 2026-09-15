@@ -1,59 +1,59 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-label="Keenan Casalegno. Parametric CAD, market microstructure, systems. Three blade sections from the F110 turbofan, drawn to their real thickness and camber.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 180" width="1200" height="180" role="img" aria-label="Keenan Casalegno. Robotics, AI, market microstructure. Three blade sections from the F110 turbofan, drawn to their real thickness and camber.">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0B1412"/><stop offset="1" stop-color="#070C0B"/></linearGradient>
     <pattern id="g1" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#12201C" stroke-width="1"/></pattern>
     <pattern id="g2" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M10 0H0V10" fill="none" stroke="#0F1A17" stroke-width="0.6"/></pattern>
     <linearGradient id="glow" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1E5C49" stop-opacity="0.5"/><stop offset="1" stop-color="#1E5C49" stop-opacity="0"/></linearGradient>
     <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4FA98A"/><stop offset="0.7" stop-color="#4FA98A" stop-opacity="0.15"/><stop offset="1" stop-color="#4FA98A" stop-opacity="0"/></linearGradient>
-    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="26"/></filter>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="22"/></filter>
   </defs>
-  <rect width="1200" height="320" fill="url(#bg)"/>
-  <rect width="1200" height="320" fill="url(#g2)"/>
-  <rect width="1200" height="320" fill="url(#g1)"/>
-  <ellipse cx="200" cy="160" rx="300" ry="130" fill="url(#glow)" filter="url(#soft)"><animate attributeName="opacity" values="0.75;1;0.75" dur="12s" repeatCount="indefinite"/></ellipse>
-  <path d="M10 0 H24 M0 10 V24" stroke="#1C2E29" stroke-width="1" fill="none"/>
-  <path d="M1190 0 H1176 M1200 10 V24" stroke="#1C2E29" stroke-width="1" fill="none"/>
-  <path d="M10 320 H24 M0 310 V296" stroke="#1C2E29" stroke-width="1" fill="none"/>
-  <path d="M1190 320 H1176 M1200 310 V296" stroke="#1C2E29" stroke-width="1" fill="none"/>
-  <line x1="1130" y1="52" x2="1130" y2="264" stroke="#1C2E29" stroke-width="1" stroke-dasharray="2 5"/>
-  <g fill="none" stroke="#4FA98A" stroke-width="0.543" stroke-linejoin="round" stroke-linecap="round">
-    <g transform="translate(900.00,95.95) scale(2.3)">
-      <path d="M100.00,-0.00L99.81,0.03L99.25,0.14L98.31,0.30L97.00,0.53L95.35,0.81L93.34,1.14L91.01,1.50L88.36,1.90L85.42,2.31L82.21,2.73L78.76,3.14L75.08,3.55L71.21,3.93L67.17,4.28L63.00,4.59L58.72,4.85L54.38,5.06L50.00,5.20L45.62,5.29L41.27,5.30L36.98,5.25L32.80,5.14L28.74,4.96L24.85,4.72L21.16,4.43L17.68,4.09L14.46,3.70L11.51,3.29L8.86,2.86L6.53,2.41L4.53,1.97L2.88,1.53L1.60,1.11L0.69,0.71L0.15,0.34L0.00,0.00L0.23,-0.29L0.83,-0.53L1.81,-0.71L3.15,-0.83L4.84,-0.90L6.87,-0.91L9.23,-0.88L11.89,-0.81L14.83,-0.70L18.04,-0.56L21.49,-0.40L25.15,-0.22L29.00,-0.03L33.00,0.16L37.14,0.34L41.37,0.52L45.67,0.67L50.00,0.80L54.34,0.90L58.64,0.97L62.89,1.01L67.03,1.02L71.06,1.00L74.92,0.95L78.60,0.88L82.06,0.79L85.29,0.69L88.24,0.58L90.91,0.47L93.26,0.36L95.29,0.26L96.96,0.17L98.28,0.10L99.24,0.04L99.81,0.01" opacity="0.52"/>
+  <rect width="1200" height="180" fill="url(#bg)"/>
+  <rect width="1200" height="180" fill="url(#g2)"/>
+  <rect width="1200" height="180" fill="url(#g1)"/>
+  <ellipse cx="190" cy="90" rx="290" ry="100" fill="url(#glow)" filter="url(#soft)"><animate attributeName="opacity" values="0.75;1;0.75" dur="12s" repeatCount="indefinite"/></ellipse>
+  <path d="M9 0 H21 M0 9 V21" stroke="#1C2E29" stroke-width="1" fill="none"/>
+  <path d="M1191 0 H1179 M1200 9 V21" stroke="#1C2E29" stroke-width="1" fill="none"/>
+  <path d="M9 180 H21 M0 171 V159" stroke="#1C2E29" stroke-width="1" fill="none"/>
+  <path d="M1191 180 H1179 M1200 171 V159" stroke="#1C2E29" stroke-width="1" fill="none"/>
+  <line x1="1130" y1="36" x2="1130" y2="162" stroke="#1C2E29" stroke-width="1" stroke-dasharray="2 5"/>
+  <g fill="none" stroke="#4FA98A" stroke-width="0.714" stroke-linejoin="round" stroke-linecap="round">
+    <g transform="translate(955.00,55.96) scale(1.75)">
+      <path d="M100.00,-0.00L99.81,0.03L99.25,0.14L98.31,0.30L97.00,0.53L95.35,0.81L93.34,1.14L91.01,1.50L88.36,1.90L85.42,2.31L82.21,2.73L78.76,3.14L75.08,3.55L71.21,3.93L67.17,4.28L63.00,4.59L58.72,4.85L54.38,5.06L50.00,5.20L45.62,5.29L41.27,5.30L36.98,5.25L32.80,5.14L28.74,4.96L24.85,4.72L21.16,4.43L17.68,4.09L14.46,3.70L11.51,3.29L8.86,2.86L6.53,2.41L4.53,1.97L2.88,1.53L1.60,1.11L0.69,0.71L0.15,0.34L0.00,0.00L0.23,-0.29L0.83,-0.53L1.81,-0.71L3.15,-0.83L4.84,-0.90L6.87,-0.91L9.23,-0.88L11.89,-0.81L14.83,-0.70L18.04,-0.56L21.49,-0.40L25.15,-0.22L29.00,-0.03L33.00,0.16L37.14,0.34L41.37,0.52L45.67,0.67L50.00,0.80L54.34,0.90L58.64,0.97L62.89,1.01L67.03,1.02L71.06,1.00L74.92,0.95L78.60,0.88L82.06,0.79L85.29,0.69L88.24,0.58L90.91,0.47L93.26,0.36L95.29,0.26L96.96,0.17L98.28,0.10L99.24,0.04L99.81,0.01" opacity="0.55"/>
     </g>
-    <g transform="translate(900.00,159.90) scale(2.3)">
-      <path d="M100.00,-0.00L99.81,0.06L99.26,0.25L98.33,0.56L97.05,0.98L95.41,1.50L93.43,2.11L91.12,2.79L88.49,3.52L85.57,4.28L82.38,5.05L78.93,5.82L75.25,6.57L71.37,7.26L67.31,7.90L63.12,8.46L58.81,8.92L54.43,9.28L50.00,9.52L45.56,9.65L41.16,9.65L36.82,9.52L32.57,9.27L28.47,8.91L24.53,8.43L20.79,7.86L17.29,7.21L14.05,6.49L11.10,5.72L8.46,4.93L6.15,4.12L4.19,3.32L2.60,2.55L1.37,1.82L0.53,1.15L0.07,0.54L0.00,0.00L0.31,-0.45L0.99,-0.79L2.03,-1.02L3.43,-1.15L5.17,-1.18L7.24,-1.12L9.62,-0.98L12.29,-0.76L15.24,-0.49L18.43,-0.17L21.85,0.19L25.47,0.57L29.27,0.95L33.23,1.32L37.30,1.67L41.48,1.99L45.72,2.26L50.00,2.48L54.29,2.63L58.55,2.72L62.76,2.74L66.89,2.70L70.89,2.59L74.75,2.43L78.43,2.23L81.90,1.99L85.14,1.72L88.11,1.44L90.80,1.16L93.17,0.89L95.22,0.64L96.92,0.42L98.26,0.24L99.22,0.11L99.81,0.03" opacity="0.74"/>
+    <g transform="translate(955.00,99.93) scale(1.75)">
+      <path d="M100.00,-0.00L99.81,0.06L99.26,0.25L98.33,0.56L97.05,0.98L95.41,1.50L93.43,2.11L91.12,2.79L88.49,3.52L85.57,4.28L82.38,5.05L78.93,5.82L75.25,6.57L71.37,7.26L67.31,7.90L63.12,8.46L58.81,8.92L54.43,9.28L50.00,9.52L45.56,9.65L41.16,9.65L36.82,9.52L32.57,9.27L28.47,8.91L24.53,8.43L20.79,7.86L17.29,7.21L14.05,6.49L11.10,5.72L8.46,4.93L6.15,4.12L4.19,3.32L2.60,2.55L1.37,1.82L0.53,1.15L0.07,0.54L0.00,0.00L0.31,-0.45L0.99,-0.79L2.03,-1.02L3.43,-1.15L5.17,-1.18L7.24,-1.12L9.62,-0.98L12.29,-0.76L15.24,-0.49L18.43,-0.17L21.85,0.19L25.47,0.57L29.27,0.95L33.23,1.32L37.30,1.67L41.48,1.99L45.72,2.26L50.00,2.48L54.29,2.63L58.55,2.72L62.76,2.74L66.89,2.70L70.89,2.59L74.75,2.43L78.43,2.23L81.90,1.99L85.14,1.72L88.11,1.44L90.80,1.16L93.17,0.89L95.22,0.64L96.92,0.42L98.26,0.24L99.22,0.11L99.81,0.03" opacity="0.75"/>
     </g>
-    <g transform="translate(900.00,223.79) scale(2.3)">
+    <g transform="translate(955.00,143.84) scale(1.75)">
       <path d="M100.00,-0.00L99.83,0.14L99.31,0.55L98.45,1.23L97.25,2.14L95.71,3.29L93.84,4.62L91.65,6.11L89.13,7.72L86.31,9.41L83.19,11.13L79.79,12.85L76.12,14.51L72.21,16.07L68.08,17.49L63.76,18.73L59.28,19.76L54.68,20.54L50.00,21.05L45.28,21.27L40.58,21.21L35.93,20.84L31.40,20.20L27.03,19.28L22.86,18.13L18.95,16.77L15.33,15.24L12.04,13.58L9.10,11.84L6.53,10.08L4.36,8.32L2.49,6.82L0.69,6.06L-0.42,4.86L-0.85,3.35L-0.69,1.68L0.00,0.00L1.07,-1.46L2.37,-2.51L3.83,-2.99L5.34,-2.79L6.88,-1.82L9.03,-1.32L11.55,-0.86L14.30,-0.28L17.25,0.42L20.39,1.19L23.69,2.02L27.14,2.87L30.71,3.72L34.40,4.53L38.19,5.28L42.06,5.95L46.00,6.51L50.00,6.95L54.03,7.25L58.08,7.40L62.12,7.39L66.12,7.24L70.05,6.93L73.88,6.49L77.57,5.94L81.09,5.30L84.40,4.59L87.47,3.85L90.27,3.10L92.76,2.38L94.92,1.71L96.72,1.13L98.14,0.65L99.17,0.29L99.79,0.07" opacity="0.95"/>
     </g>
   </g>
   <g fill="none" stroke="#8FE3BE" stroke-linejoin="round" stroke-linecap="round">
-    <g transform="translate(900.00,95.95) scale(2.3)">
-      <path d="M100.00,-0.00L99.81,0.03L99.25,0.14L98.31,0.30L97.00,0.53L95.35,0.81L93.34,1.14L91.01,1.50L88.36,1.90L85.42,2.31L82.21,2.73L78.76,3.14L75.08,3.55L71.21,3.93L67.17,4.28L63.00,4.59L58.72,4.85L54.38,5.06L50.00,5.20L45.62,5.29L41.27,5.30L36.98,5.25L32.80,5.14L28.74,4.96L24.85,4.72L21.16,4.43L17.68,4.09L14.46,3.70L11.51,3.29L8.86,2.86L6.53,2.41L4.53,1.97L2.88,1.53L1.60,1.11L0.69,0.71L0.15,0.34L0.00,0.00L0.23,-0.29L0.83,-0.53L1.81,-0.71L3.15,-0.83L4.84,-0.90L6.87,-0.91L9.23,-0.88L11.89,-0.81L14.83,-0.70L18.04,-0.56L21.49,-0.40L25.15,-0.22L29.00,-0.03L33.00,0.16L37.14,0.34L41.37,0.52L45.67,0.67L50.00,0.80L54.34,0.90L58.64,0.97L62.89,1.01L67.03,1.02L71.06,1.00L74.92,0.95L78.60,0.88L82.06,0.79L85.29,0.69L88.24,0.58L90.91,0.47L93.26,0.36L95.29,0.26L96.96,0.17L98.28,0.10L99.24,0.04L99.81,0.01" pathLength="100" stroke-dasharray="7 93" stroke-dashoffset="100" opacity="0.77" stroke-width="0.870">
+    <g transform="translate(955.00,55.96) scale(1.75)">
+      <path d="M100.00,-0.00L99.81,0.03L99.25,0.14L98.31,0.30L97.00,0.53L95.35,0.81L93.34,1.14L91.01,1.50L88.36,1.90L85.42,2.31L82.21,2.73L78.76,3.14L75.08,3.55L71.21,3.93L67.17,4.28L63.00,4.59L58.72,4.85L54.38,5.06L50.00,5.20L45.62,5.29L41.27,5.30L36.98,5.25L32.80,5.14L28.74,4.96L24.85,4.72L21.16,4.43L17.68,4.09L14.46,3.70L11.51,3.29L8.86,2.86L6.53,2.41L4.53,1.97L2.88,1.53L1.60,1.11L0.69,0.71L0.15,0.34L0.00,0.00L0.23,-0.29L0.83,-0.53L1.81,-0.71L3.15,-0.83L4.84,-0.90L6.87,-0.91L9.23,-0.88L11.89,-0.81L14.83,-0.70L18.04,-0.56L21.49,-0.40L25.15,-0.22L29.00,-0.03L33.00,0.16L37.14,0.34L41.37,0.52L45.67,0.67L50.00,0.80L54.34,0.90L58.64,0.97L62.89,1.01L67.03,1.02L71.06,1.00L74.92,0.95L78.60,0.88L82.06,0.79L85.29,0.69L88.24,0.58L90.91,0.47L93.26,0.36L95.29,0.26L96.96,0.17L98.28,0.10L99.24,0.04L99.81,0.01" pathLength="100" stroke-dasharray="7 93" stroke-dashoffset="100" opacity="0.80" stroke-width="1.143">
         <animate attributeName="stroke-dashoffset" from="100" to="0" dur="6s" begin="0.0s" repeatCount="indefinite"/>
       </path>
     </g>
-    <g transform="translate(900.00,159.90) scale(2.3)">
-      <path d="M100.00,-0.00L99.81,0.06L99.26,0.25L98.33,0.56L97.05,0.98L95.41,1.50L93.43,2.11L91.12,2.79L88.49,3.52L85.57,4.28L82.38,5.05L78.93,5.82L75.25,6.57L71.37,7.26L67.31,7.90L63.12,8.46L58.81,8.92L54.43,9.28L50.00,9.52L45.56,9.65L41.16,9.65L36.82,9.52L32.57,9.27L28.47,8.91L24.53,8.43L20.79,7.86L17.29,7.21L14.05,6.49L11.10,5.72L8.46,4.93L6.15,4.12L4.19,3.32L2.60,2.55L1.37,1.82L0.53,1.15L0.07,0.54L0.00,0.00L0.31,-0.45L0.99,-0.79L2.03,-1.02L3.43,-1.15L5.17,-1.18L7.24,-1.12L9.62,-0.98L12.29,-0.76L15.24,-0.49L18.43,-0.17L21.85,0.19L25.47,0.57L29.27,0.95L33.23,1.32L37.30,1.67L41.48,1.99L45.72,2.26L50.00,2.48L54.29,2.63L58.55,2.72L62.76,2.74L66.89,2.70L70.89,2.59L74.75,2.43L78.43,2.23L81.90,1.99L85.14,1.72L88.11,1.44L90.80,1.16L93.17,0.89L95.22,0.64L96.92,0.42L98.26,0.24L99.22,0.11L99.81,0.03" pathLength="100" stroke-dasharray="7 93" stroke-dashoffset="100" opacity="0.99" stroke-width="0.870">
+    <g transform="translate(955.00,99.93) scale(1.75)">
+      <path d="M100.00,-0.00L99.81,0.06L99.26,0.25L98.33,0.56L97.05,0.98L95.41,1.50L93.43,2.11L91.12,2.79L88.49,3.52L85.57,4.28L82.38,5.05L78.93,5.82L75.25,6.57L71.37,7.26L67.31,7.90L63.12,8.46L58.81,8.92L54.43,9.28L50.00,9.52L45.56,9.65L41.16,9.65L36.82,9.52L32.57,9.27L28.47,8.91L24.53,8.43L20.79,7.86L17.29,7.21L14.05,6.49L11.10,5.72L8.46,4.93L6.15,4.12L4.19,3.32L2.60,2.55L1.37,1.82L0.53,1.15L0.07,0.54L0.00,0.00L0.31,-0.45L0.99,-0.79L2.03,-1.02L3.43,-1.15L5.17,-1.18L7.24,-1.12L9.62,-0.98L12.29,-0.76L15.24,-0.49L18.43,-0.17L21.85,0.19L25.47,0.57L29.27,0.95L33.23,1.32L37.30,1.67L41.48,1.99L45.72,2.26L50.00,2.48L54.29,2.63L58.55,2.72L62.76,2.74L66.89,2.70L70.89,2.59L74.75,2.43L78.43,2.23L81.90,1.99L85.14,1.72L88.11,1.44L90.80,1.16L93.17,0.89L95.22,0.64L96.92,0.42L98.26,0.24L99.22,0.11L99.81,0.03" pathLength="100" stroke-dasharray="7 93" stroke-dashoffset="100" opacity="1.00" stroke-width="1.143">
         <animate attributeName="stroke-dashoffset" from="100" to="0" dur="6s" begin="1.1s" repeatCount="indefinite"/>
       </path>
     </g>
-    <g transform="translate(900.00,223.79) scale(2.3)">
-      <path d="M100.00,-0.00L99.83,0.14L99.31,0.55L98.45,1.23L97.25,2.14L95.71,3.29L93.84,4.62L91.65,6.11L89.13,7.72L86.31,9.41L83.19,11.13L79.79,12.85L76.12,14.51L72.21,16.07L68.08,17.49L63.76,18.73L59.28,19.76L54.68,20.54L50.00,21.05L45.28,21.27L40.58,21.21L35.93,20.84L31.40,20.20L27.03,19.28L22.86,18.13L18.95,16.77L15.33,15.24L12.04,13.58L9.10,11.84L6.53,10.08L4.36,8.32L2.49,6.82L0.69,6.06L-0.42,4.86L-0.85,3.35L-0.69,1.68L0.00,0.00L1.07,-1.46L2.37,-2.51L3.83,-2.99L5.34,-2.79L6.88,-1.82L9.03,-1.32L11.55,-0.86L14.30,-0.28L17.25,0.42L20.39,1.19L23.69,2.02L27.14,2.87L30.71,3.72L34.40,4.53L38.19,5.28L42.06,5.95L46.00,6.51L50.00,6.95L54.03,7.25L58.08,7.40L62.12,7.39L66.12,7.24L70.05,6.93L73.88,6.49L77.57,5.94L81.09,5.30L84.40,4.59L87.47,3.85L90.27,3.10L92.76,2.38L94.92,1.71L96.72,1.13L98.14,0.65L99.17,0.29L99.79,0.07" pathLength="100" stroke-dasharray="7 93" stroke-dashoffset="100" opacity="1.00" stroke-width="0.870">
+    <g transform="translate(955.00,143.84) scale(1.75)">
+      <path d="M100.00,-0.00L99.83,0.14L99.31,0.55L98.45,1.23L97.25,2.14L95.71,3.29L93.84,4.62L91.65,6.11L89.13,7.72L86.31,9.41L83.19,11.13L79.79,12.85L76.12,14.51L72.21,16.07L68.08,17.49L63.76,18.73L59.28,19.76L54.68,20.54L50.00,21.05L45.28,21.27L40.58,21.21L35.93,20.84L31.40,20.20L27.03,19.28L22.86,18.13L18.95,16.77L15.33,15.24L12.04,13.58L9.10,11.84L6.53,10.08L4.36,8.32L2.49,6.82L0.69,6.06L-0.42,4.86L-0.85,3.35L-0.69,1.68L0.00,0.00L1.07,-1.46L2.37,-2.51L3.83,-2.99L5.34,-2.79L6.88,-1.82L9.03,-1.32L11.55,-0.86L14.30,-0.28L17.25,0.42L20.39,1.19L23.69,2.02L27.14,2.87L30.71,3.72L34.40,4.53L38.19,5.28L42.06,5.95L46.00,6.51L50.00,6.95L54.03,7.25L58.08,7.40L62.12,7.39L66.12,7.24L70.05,6.93L73.88,6.49L77.57,5.94L81.09,5.30L84.40,4.59L87.47,3.85L90.27,3.10L92.76,2.38L94.92,1.71L96.72,1.13L98.14,0.65L99.17,0.29L99.79,0.07" pathLength="100" stroke-dasharray="7 93" stroke-dashoffset="100" opacity="1.00" stroke-width="1.143">
         <animate attributeName="stroke-dashoffset" from="100" to="0" dur="6s" begin="2.2s" repeatCount="indefinite"/>
       </path>
     </g>
   </g>
-    <text x="1142" y="99" fill="#4A5D56" font-size="9.5" letter-spacing="1.4">IGV</text>
-    <text x="1142" y="163" fill="#4A5D56" font-size="9.5" letter-spacing="1.4">HPC R1</text>
-    <text x="1142" y="227" fill="#4A5D56" font-size="9.5" letter-spacing="1.4">HPT NGV</text>
-  <rect x="0" y="0" width="1.5" height="320" fill="#4FA98A" opacity="0.2"><animate attributeName="x" values="-10;1210" dur="12s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.24;0.24;0" keyTimes="0;0.1;0.8;1" dur="12s" repeatCount="indefinite"/></rect>
+    <text x="1141" y="59" fill="#4A5D56" font-size="9" letter-spacing="1.2">IGV</text>
+    <text x="1141" y="103" fill="#4A5D56" font-size="9" letter-spacing="1.2">HPC R1</text>
+    <text x="1141" y="147" fill="#4A5D56" font-size="9" letter-spacing="1.2">HPT NGV</text>
+  <rect x="0" y="0" width="1.5" height="180" fill="#4FA98A" opacity="0.2"><animate attributeName="x" values="-10;1210" dur="12s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.24;0.24;0" keyTimes="0;0.1;0.8;1" dur="12s" repeatCount="indefinite"/></rect>
   <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
-    <text x="72" y="140" fill="#E9F2EE" font-size="54" letter-spacing="7" font-weight="600">KEENAN</text>
-    <text x="72" y="202" fill="#E9F2EE" font-size="54" letter-spacing="7" font-weight="600" opacity="0.38">CASALEGNO</text>
-    <line x1="74" y1="232" x2="580" y2="232" stroke="url(#rule)" stroke-width="2" pathLength="100" stroke-dasharray="100"><animate attributeName="stroke-dashoffset" from="100" to="0" dur="1.8s" begin="0.3s" fill="freeze"/></line>
-    <text x="74" y="264" fill="#7E918B" font-size="14" letter-spacing="2.5">PARAMETRIC CAD · MARKET MICROSTRUCTURE · SYSTEMS</text>
-    <text x="74" y="46" fill="#3A4A44" font-size="10" letter-spacing="3">KRABDUKE</text>
-    <text x="1128" y="46" fill="#3A4A44" font-size="10" letter-spacing="3" text-anchor="end">SHEET 00 · 2026</text>
+    <text x="72" y="92" fill="#E9F2EE" font-size="46" letter-spacing="6" font-weight="600">KEENAN</text>
+    <text x="72" y="136" fill="#E9F2EE" font-size="46" letter-spacing="6" font-weight="600" opacity="0.38">CASALEGNO</text>
+    <line x1="74" y1="154" x2="520" y2="154" stroke="url(#rule)" stroke-width="2" pathLength="100" stroke-dasharray="100"><animate attributeName="stroke-dashoffset" from="100" to="0" dur="1.8s" begin="0.3s" fill="freeze"/></line>
+    <text x="74" y="174" fill="#7E918B" font-size="14" letter-spacing="2.4">ROBOTICS · AI · MARKET MICROSTRUCTURE</text>
+    <text x="74" y="34" fill="#3A4A44" font-size="9.5" letter-spacing="2.8">KRABDUKE</text>
+    <text x="1128" y="34" fill="#3A4A44" font-size="9.5" letter-spacing="2.8" text-anchor="end">SHEET 00 · 2026</text>
   </g>
 </svg>
