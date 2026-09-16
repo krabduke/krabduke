@@ -77,7 +77,7 @@ def cover():
         marks += (f'  <path d="M{x + dx * m} {y} H{x + dx * (m + L)}'
                   f' M{x} {y + dy * m} V{y + dy * (m + L)}" stroke="{LINE}" stroke-width="1" fill="none"/>\n')
 
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="Keenan Casalegno — robotics, AI, market microstructure">
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="krabduke — robotics, AI, market microstructure">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{BG}"/><stop offset="1" stop-color="#070C0B"/></linearGradient>
     <pattern id="g1" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="{GRID}" stroke-width="1"/></pattern>
@@ -92,11 +92,9 @@ def cover():
   <ellipse cx="210" cy="80" rx="300" ry="95" fill="url(#glow)" filter="url(#soft)"><animate attributeName="opacity" values="0.75;1;0.75" dur="12s" repeatCount="indefinite"/></ellipse>
 {marks}  <rect x="0" y="0" width="1.5" height="{H}" fill="{ACCENT}" opacity="0.2"><animate attributeName="x" values="-10;1210" dur="12s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.24;0.24;0" keyTimes="0;0.1;0.8;1" dur="12s" repeatCount="indefinite"/></rect>
   <g font-family="{MONO}">
-    <text x="72" y="72" fill="{INK}" font-size="42" letter-spacing="6" font-weight="600">KEENAN</text>
-    <text x="72" y="114" fill="{INK}" font-size="42" letter-spacing="6" font-weight="600" opacity="0.38">CASALEGNO</text>
-    <line x1="74" y1="130" x2="620" y2="130" stroke="url(#rule)" stroke-width="2" pathLength="100" stroke-dasharray="100" stroke-dashoffset="0"><animate attributeName="stroke-dashoffset" from="100" to="0" dur="1.8s" begin="0.3s" fill="freeze"/></line>
-    <text x="74" y="148" fill="{MUTED}" font-size="13.5" letter-spacing="2.4">ROBOTICS · AI · MARKET MICROSTRUCTURE</text>
-    <text x="74" y="26" fill="#3A4A44" font-size="9.5" letter-spacing="2.8">KRABDUKE</text>
+    <text x="72" y="80" fill="{INK}" font-size="58" letter-spacing="7" font-weight="600">KRABDUKE</text>
+    <line x1="74" y1="102" x2="620" y2="102" stroke="url(#rule)" stroke-width="2" pathLength="100" stroke-dasharray="100" stroke-dashoffset="0"><animate attributeName="stroke-dashoffset" from="100" to="0" dur="1.8s" begin="0.3s" fill="freeze"/></line>
+    <text x="74" y="124" fill="{MUTED}" font-size="13.5" letter-spacing="2.4">ROBOTICS · AI · MARKET MICROSTRUCTURE</text>
   </g>
 </svg>
 '''

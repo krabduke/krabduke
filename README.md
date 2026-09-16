@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="hero.svg" width="100%" alt="Keenan Casalegno — robotics, AI, market microstructure" />
+  <img src="hero.svg" width="100%" alt="krabduke — robotics, AI, market microstructure" />
   <br />
   <a href="https://github.com/krabduke/model-gallery"><img src="card-01.svg" width="100%" alt="Sheet 01, model-gallery: an F110 turbofan starting up, spools winding up and the afterburner lighting" /></a>
   <br />
