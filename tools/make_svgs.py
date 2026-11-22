@@ -5,6 +5,7 @@ images get white gaps between them).
     python tools/make_banner.py && python tools/make_svgs.py
 """
 import base64
+import struct
 import os
 from xml.sax.saxutils import escape
 
@@ -143,9 +144,12 @@ def nest(svg, y):
 
 
 def profile_svg():
-    W, BH = 1200, 400
+    W = 1200
     with open(os.path.join(ROOT, "banner.png"), "rb") as f:
-        b64 = base64.b64encode(f.read()).decode()
+        raw = f.read()
+    b64 = base64.b64encode(raw).decode()
+    pw, ph = struct.unpack(">II", raw[16:24])  # PNG IHDR width/height
+    BH = round(W * ph / pw)
     tiles, term = interests_svg(), terminal_svg()
     th = int(tiles.split('height="', 1)[1].split('"', 1)[0])
     rh = int(term.split('height="', 1)[1].split('"', 1)[0])
