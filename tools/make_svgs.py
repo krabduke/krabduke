@@ -1,7 +1,10 @@
-"""Generate interests.svg (ASCII icon tiles) and terminal.svg (typed-out readout).
+"""Generate profile.svg: the banner, ASCII interest tiles and a typed-out terminal
+readout as ONE image, so GitHub renders it as a single black block (separate
+images get white gaps between them).
 
-    python tools/make_svgs.py
+    python tools/make_banner.py && python tools/make_svgs.py
 """
+import base64
 import os
 from xml.sax.saxutils import escape
 
@@ -69,7 +72,7 @@ def icon_lines(icon):
 
 
 def interests_svg():
-    W, gap, H = 1200, 12, 215
+    W, gap, H = 1200, 0, 215
     n = len(INTERESTS)
     tw = (W - gap * (n - 1)) / n
     fs, lh, cwf = 15, 17.5, 0.602  # monospace advance ~0.6em
@@ -78,7 +81,8 @@ def interests_svg():
            f'<rect width="{W}" height="{H}" fill="{INK}"/>']
     for k, (label, _, icon) in enumerate(INTERESTS):
         x0 = k * (tw + gap)
-        out.append(f'<rect x="{x0 + .5:.1f}" y=".5" width="{tw - 1:.1f}" height="{H - 1}" fill="{INK}" stroke="{LINE}"/>')
+        if k:  # thin divider instead of separate boxes
+            out.append(f'<line x1="{x0:.1f}" y1="28" x2="{x0:.1f}" y2="{H - 28}" stroke="{LINE}"/>')
         lines = icon_lines(icon)
         wmax = max(len(l) for l in lines) * fs * cwf
         ix = x0 + (tw - wmax) / 2
@@ -113,7 +117,7 @@ def terminal_svg():
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" '
            f'aria-label="Interests: ' + "; ".join(f"{l}, {d}" for l, d, _ in INTERESTS) + '">',
            f'<style>{css}</style>',
-           f'<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" fill="{INK}" stroke="{LINE}"/>',
+           f'<rect width="{W}" height="{H}" fill="{INK}"/>',
            f'<g font-family="{MONO}" font-size="{fs}" xml:space="preserve" style="white-space:pre">']
     for i, parts in enumerate(rows):
         y = pad + i * lh + fs
@@ -134,8 +138,31 @@ def terminal_svg():
     return "\n".join(out)
 
 
+def nest(svg, y):
+    return svg.replace('<svg xmlns="http://www.w3.org/2000/svg" ', f'<svg x="0" y="{y}" ', 1)
+
+
+def profile_svg():
+    W, BH = 1200, 400
+    with open(os.path.join(ROOT, "banner.png"), "rb") as f:
+        b64 = base64.b64encode(f.read()).decode()
+    tiles, term = interests_svg(), terminal_svg()
+    th = int(tiles.split('height="', 1)[1].split('"', 1)[0])
+    rh = int(term.split('height="', 1)[1].split('"', 1)[0])
+    H = BH + th + rh
+    labels = ", ".join(f"{l} ({d})" for l, d, _ in INTERESTS)
+    return "\n".join([
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" '
+        f'aria-label="krabduke, building things to see how they work. Interests: {escape(labels)}">',
+        f'<rect width="{W}" height="{H}" fill="{INK}"/>',
+        f'<image href="data:image/png;base64,{b64}" x="0" y="0" width="{W}" height="{BH}"/>',
+        nest(tiles, BH),
+        f'<line x1="30" y1="{BH + th}" x2="{W - 30}" y2="{BH + th}" stroke="{LINE}"/>',
+        nest(term, BH + th),
+        '</svg>'])
+
+
 if __name__ == "__main__":
-    for name, svg in (("interests.svg", interests_svg()), ("terminal.svg", terminal_svg())):
-        with open(os.path.join(ROOT, name), "w") as f:
-            f.write(svg + "\n")
-        print("wrote", name)
+    with open(os.path.join(ROOT, "profile.svg"), "w") as f:
+        f.write(profile_svg() + "\n")
+    print("wrote profile.svg")
