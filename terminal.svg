@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 245" width="1200" height="245" role="img" aria-label="Interests: robotics, things that move; ai, things that think; markets, order books, microstructure; games, co-op, strange, in the browser; physics, how any of it works">
+<style>
+.c{animation:type 0.38s steps(28,end) both}
+.cur{opacity:0;animation:blink 1.06s steps(1,end) infinite}
+@keyframes type{from{transform:translateX(0)}to{transform:translateX(1200px)}}
+@keyframes blink{0%{opacity:1}50%{opacity:0}}
+@media (prefers-reduced-motion: reduce){.c{display:none}.cur{animation:none;opacity:1}}
+</style>
+<rect x=".5" y=".5" width="1199" height="244" fill="#08080C" stroke="#2A251C"/>
+<g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="17" xml:space="preserve" style="white-space:pre">
+<text x="30" y="47"><tspan fill="#C9A56B">krabduke</tspan><tspan fill="#5A5448">@</tspan><tspan fill="#C9A56B">earth</tspan><tspan fill="#5A5448">&#160;~&#160;$&#160;</tspan><tspan fill="#F1E7D2">cat&#160;interests</tspan></text>
+<text x="30" y="75"><tspan fill="#8A8070">robotics&#160;.........&#160;</tspan><tspan fill="#F1E7D2">things&#160;that&#160;move</tspan></text>
+<text x="30" y="103"><tspan fill="#8A8070">ai&#160;...............&#160;</tspan><tspan fill="#F1E7D2">things&#160;that&#160;think</tspan></text>
+<text x="30" y="131"><tspan fill="#8A8070">markets&#160;..........&#160;</tspan><tspan fill="#F1E7D2">order&#160;books,&#160;microstructure</tspan></text>
+<text x="30" y="159"><tspan fill="#8A8070">games&#160;............&#160;</tspan><tspan fill="#F1E7D2">co-op,&#160;strange,&#160;in&#160;the&#160;browser</tspan></text>
+<text x="30" y="187"><tspan fill="#8A8070">physics&#160;..........&#160;</tspan><tspan fill="#F1E7D2">how&#160;any&#160;of&#160;it&#160;works</tspan></text>
+<text x="30" y="215"><tspan fill="#5A5448">~&#160;$&#160;</tspan></text>
+</g>
+<rect class="c" style="animation-delay:0.30s" x="28" y="24" width="1170" height="28" fill="#08080C"/>
+<rect class="c" style="animation-delay:0.72s" x="28" y="52" width="1170" height="28" fill="#08080C"/>
+<rect class="c" style="animation-delay:1.14s" x="28" y="80" width="1170" height="28" fill="#08080C"/>
+<rect class="c" style="animation-delay:1.56s" x="28" y="108" width="1170" height="28" fill="#08080C"/>
+<rect class="c" style="animation-delay:1.98s" x="28" y="136" width="1170" height="28" fill="#08080C"/>
+<rect class="c" style="animation-delay:2.40s" x="28" y="164" width="1170" height="28" fill="#08080C"/>
+<rect class="c" style="animation-delay:2.82s" x="28" y="192" width="1170" height="28" fill="#08080C"/>
+<rect class="cur" style="animation-delay:3.20s" x="70.9" y="200" width="10.2" height="20" fill="#C9A56B"/>
+</svg>
