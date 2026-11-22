@@ -1,4 +1,4 @@
-"""Generate profile.svg: the banner, ASCII interest tiles and a typed-out terminal
+"""Generate krabduke.svg: the banner, ASCII interest tiles and a typed-out terminal
 readout as ONE image, so GitHub renders it as a single black block (separate
 images get white gaps between them).
 
@@ -167,6 +167,6 @@ def profile_svg():
 
 
 if __name__ == "__main__":
-    with open(os.path.join(ROOT, "profile.svg"), "w") as f:
+    with open(os.path.join(ROOT, "krabduke.svg"), "w") as f:
         f.write(profile_svg() + "\n")
-    print("wrote profile.svg")
+    print("wrote krabduke.svg")
