@@ -12,7 +12,7 @@ SRC=os.path.join(ROOT,'assets','creation-of-adam.png'); OUT=os.path.join(ROOT,'b
 # plaster grain above and below (2880x1864 screen aspect, scaled to 2400 wide)
 box=(88,10,2488,1088); W,FH=2400,round(2400*1864/2880); fs=8
 H=round(W*(box[3]-box[1])/(box[2]-box[0]))  # height of the painting band
-NAME='KRABDUKE'; TAGLINE='building things to see how they work'
+NAME='KEENAN CASALEGNO'; TAGLINE='building things to see how they work'
 BONE=np.array([241,231,210]); GOLD=np.array([201,165,107])
 FONT='/System/Library/Fonts/Menlo.ttc'
 font=ImageFont.truetype(FONT,fs,index=1)  # Menlo Bold
@@ -76,7 +76,9 @@ v=np.where(d_out>0,spark*fade,V); lab=np.where(d_out>0,wall_lab,LAB); rows,H=ch_
 def cellg(a): return np.asarray(Image.fromarray((np.clip(a,0,1)*255).astype('uint8')).resize((cols,rows),Image.BOX),float)/255
 # --- name built from glyphs inside the grid, centred in the top margin ---
 top=off*ch  # pixel height of the top margin
-nf=ImageFont.truetype(FONT,int(top*0.56),index=1)
+nsz=int(top*0.56)
+while ImageFont.truetype(FONT,nsz,index=1).getlength(NAME)>W*0.88: nsz-=2  # longer names: shrink to fit
+nf=ImageFont.truetype(FONT,nsz,index=1)
 tf=ImageFont.truetype(FONT,int(top*0.11),index=0)
 nm_img=Image.new('L',(W,H),0); nd=ImageDraw.Draw(nm_img)
 b0=nd.textbbox((0,0),NAME,font=nf); t0=nd.textbbox((0,0),TAGLINE,font=tf)

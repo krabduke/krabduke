@@ -100,7 +100,7 @@ def interests_svg():
 
 def terminal_svg():
     W, fs, lh, pad = 1200, 17, 28, 30
-    prompt = [(GOLD, "krabduke"), (FAINT, "@"), (GOLD, "earth"), (FAINT, " ~ $ "), (BONE, "cat interests")]
+    prompt = [(GOLD, "keenan"), (FAINT, "@"), (GOLD, "earth"), (FAINT, " ~ $ "), (BONE, "cat interests")]
     rows = [prompt]
     for label, desc, _ in INTERESTS:
         rows.append([(DIM, f"{label} ".ljust(18, ".") + " "), (BONE, desc)])
@@ -157,7 +157,7 @@ def profile_svg():
     labels = ", ".join(f"{l} ({d})" for l, d, _ in INTERESTS)
     return "\n".join([
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" '
-        f'aria-label="krabduke, building things to see how they work. Interests: {escape(labels)}">',
+        f'aria-label="Keenan Casalegno, building things to see how they work. Interests: {escape(labels)}">',
         f'<rect width="{W}" height="{H}" fill="{INK}"/>',
         f'<image href="data:image/png;base64,{b64}" x="0" y="0" width="{W}" height="{BH}"/>',
         nest(tiles, BH),
